@@ -1,0 +1,16 @@
+<template>
+    
+    <lightning-card title="Two Way Data Binding in CSS">
+        <div class="slds-p-around-medium">
+            <lightning-input type="text" label="Name" value= {name} onchange={handleNameChange}> </lightning-input>
+            <lightning-input type="number" label="Age" value = {age} onchange={handleAgeChange}> </lightning-input>
+            <div class = "slds-m-around-medium">
+                <lightning-button label="Check Eligibility" variant="brand" onclick={handleEligible}> </lightning-button>
+            </div>
+            <div class={chosenStyle}>   
+                ELIGIBLE
+            </div>
+        </div>
+
+    </lightning-card>
+</template>

@@ -1,0 +1,54 @@
+<template>
+    <lightning-card title="Login Options">
+
+        <div class="slds-p-around_medium">
+            <lightning-input type="checkbox" label="Members Login" class="loginCheck" onchange={handleMembersLogin}></lightning-input>
+            <lightning-input type="checkbox" label="New Member SignUp" class="signupCheck" onchange={handleNewMemberSignUp}></lightning-input>
+        </div>
+
+        
+        <template lwc:if={isMemberLogin}>
+            <lightning-card title="Please Input your Credentials">
+
+                <div class={isRegistered}>
+                    <p>{wrongAttemptLogin}</p>
+                </div>
+
+                <div class="slds-p-around_medium slds-box">
+                    <lightning-input type="text" label="Enter Email" value={email} onchange={handleInputEmail}></lightning-input><br>
+                    <lightning-input type="password" label="Enter Password" value={password} onchange={handleInputPassword}></lightning-input><br>
+                    <lightning-button label="Login" onclick={handleLogin}></lightning-button>
+                </div>
+            </lightning-card>
+        </template>
+
+        
+        <template lwc:elseif={isMemberSignUp}>
+            <lightning-card title="Please Input your Details">
+
+                <div class={isRegistered}>
+                    <p>{afterMessage}</p>
+                </div>
+
+                <div class="slds-p-around_medium slds-box">
+                    <lightning-input type="text" label="Enter First Name" value={firstName} onchange={handleInputFirstName}></lightning-input><br>
+                    <lightning-input type="text" label="Enter Last Name" value={lastName} onchange={handleInputLastName}></lightning-input><br>
+                    <lightning-input type="text" label="Enter Email" value={email} onchange={handleInputEmail}></lightning-input><br>
+                    <lightning-input type="password" label="Enter Password" value={password} onchange={handleInputPassword}></lightning-input><br>
+                    <lightning-button label="SignUp" onclick={handleSignUp}></lightning-button>
+                </div>
+
+            </lightning-card>
+        </template>
+
+        
+        <template lwc:else>
+            <lightning-card title="No Interest Selected">
+                <div class={defaultValue}>
+                    <p>Please select your interest</p>
+                </div>
+            </lightning-card>
+        </template>
+
+    </lightning-card>
+</template>

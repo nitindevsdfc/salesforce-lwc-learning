@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Parent SLider">
+        <div class="slds-p-arund_medium">
+            <lightning-slider 
+            min="0"
+            max="100"
+            type="horizontal"
+            label="Volume" value={currentValue} onchange={silderChange}></lightning-slider>
+        </div>
+
+        <c-child-slider child-slider-cur-val={currentValue}></c-child-slider>
+    </lightning-card>
+</template>

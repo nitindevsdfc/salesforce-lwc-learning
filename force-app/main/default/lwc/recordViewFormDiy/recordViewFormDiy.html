@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Blood Donor Details">
+        <div class="slds-p-around_medium">
+
+            <lightning-record-view-form
+                object-api-name={objectApiName}
+                record-id={recordId}>
+
+                <div class="slds-grid slds-wrap">
+
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-output-field field-name={NAME_FIELD}></lightning-output-field>
+                        <lightning-output-field field-name={BLOOD_GROUP_FIELD}></lightning-output-field>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-output-field field-name={AGE_FIELD}></lightning-output-field>
+                        <lightning-output-field field-name={EMAIL_FIELD}></lightning-output-field>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-output-field field-name={PHONE_FIELD}></lightning-output-field>
+                        <lightning-output-field field-name={LAST_DONATED_FIELD}></lightning-output-field>
+                    </div>
+
+                </div>
+
+            </lightning-record-view-form>
+
+        </div>
+    </lightning-card>
+</template>

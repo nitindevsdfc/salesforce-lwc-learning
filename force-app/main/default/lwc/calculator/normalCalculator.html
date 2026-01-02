@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="SCIENTIFIC CALCULATOR" icon-name="standard:calculator">
+        <div class="slds-p-around_medium calculator-container">
+            <div class="slds-m-bottom_small">
+                <lightning-input 
+                    type="text" 
+                    value={currentValue} 
+                    variant="label-hidden" 
+                    class="calc-display" 
+                    readonly>
+                </lightning-input>
+            </div>
+
+            <div class="button-grid">
+                <button class="calc-btn" onclick={handleInput} data-val="%">%</button>
+                <button class="calc-btn" onclick={clearEntry}>CE</button>
+                <button class="calc-btn" onclick={clearAll}>C</button>
+                <button class="calc-btn" onclick={backspace}>&lt;&lt;</button>
+
+                <button class="calc-btn" onclick={handleInput} data-val="7">7</button>
+                <button class="calc-btn" onclick={handleInput} data-val="8">8</button>
+                <button class="calc-btn" onclick={handleInput} data-val="9">9</button>
+                <button class="calc-btn" onclick={handleInput} data-val="/">/</button>
+
+                <button class="calc-btn" onclick={handleInput} data-val="4">4</button>
+                <button class="calc-btn" onclick={handleInput} data-val="5">5</button>
+                <button class="calc-btn" onclick={handleInput} data-val="6">6</button>
+                <button class="calc-btn" onclick={handleInput} data-val="*">*</button>
+
+                <button class="calc-btn" onclick={handleInput} data-val="1">1</button>
+                <button class="calc-btn" onclick={handleInput} data-val="2">2</button>
+                <button class="calc-btn" onclick={handleInput} data-val="3">3</button>
+                <button class="calc-btn" onclick={handleInput} data-val="-">-</button>
+
+                <button class="calc-btn" onclick={handleMath} data-val="sqrt">sqrt</button>
+                <button class="calc-btn zero-btn" onclick={handleInput} data-val="0">0</button>
+                <button class="calc-btn" onclick={handleInput} data-val="+">+</button>
+                <button class="calc-btn equal-btn" onclick={calculate}>=</button>
+            </div>
+
+            <div class="slds-m-top_medium">
+                <button class="close-btn" onclick={closeCalculator}>CLOSE</button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

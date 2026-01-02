@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="Parent Component">
+        <div class="slds-p-around_medium">
+
+            <lightning-input
+                label="Player Name"
+                type="text"
+                value={playerName}
+                class="refTagP"
+                onchange={setPlayerName}>
+            </lightning-input>
+
+            <lightning-input
+                label="Score"
+                type="number"
+                value={playerScore}
+                class="refTagP"
+                onchange={setScore}>
+            </lightning-input>
+
+            <lightning-input
+                label="Team"
+                type="text"
+                value={playerTeam}
+                class="refTagP"
+                onchange={setTeam}>
+            </lightning-input>
+
+            <lightning-button
+                label="Add to Squad"
+                onclick={addToSquad}>
+            </lightning-button>
+
+            <lightning-input
+                label="Add More"
+                type="checkbox"
+                checked={isChecked}
+                onchange={addMore}>
+            </lightning-input>
+
+            <div class="slds-m-around_medium slds-align_absolute-center">
+                <lightning-button lwc:ref="refTopPlayer" label="Top Player" disabled=true onclick={findTopScorer}></lightning-button>
+            </div>
+
+            <c-parent-to-child-diy-second-child-component lwc:ref="childcomponent" team-scorecard ={squad}></c-parent-to-child-diy-second-child-component>
+
+        </div>
+    </lightning-card>
+</template>

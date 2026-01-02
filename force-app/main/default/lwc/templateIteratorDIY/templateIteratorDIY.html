@@ -1,0 +1,56 @@
+<template>
+    <div class="green_card">
+    <lightning-card title="Master LWC With Top 5 Concepts">
+        <div class="slds-p-around_medium">
+            <!-- <div class = "slds-box slds-theme_shade"> -->
+                <template iterator:it={topicConcepts}>
+
+                    
+                    <div key={it.value.topicId}>
+
+                        
+                        <template lwc:if={it.first}>
+                            <div class="slds-grid slds-theme_shade slds-theme_alert-texture slds-p-around_small">
+                                <div class="slds-col slds-size_6-of-12 slds-text-align_left">
+                                    <b>Topic </b>
+                                </div>
+                                <div class="slds-col slds-size_6-of-12 slds-text-align_left">
+                                    <b>Concepts </b>
+                                </div>
+                            </div>
+                        </template>
+
+                        
+                        <div class="slds-grid slds-p-around_small slds-border_bottom">
+                            <div class="slds-col slds-size_6-of-12 slds-text-align_left left_Red">
+                                <strong>{it.value.Topics}</strong>
+                            </div>
+                            <div class="slds-col slds-size_6-of-12 slds-text-align_left right_Blue">
+                                <template for:each={it.value.Concepts} for:item="eachConcept">
+                                    <div key={eachConcept} class="slds-m-bottom_x-small">
+                                        <strong>{eachConcept}</strong>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+
+                        <template lwc:if={it.last}>
+                            <div class="slds-p-around_medium slds-grid slds-grid_align-center">
+                                <div class="slds-text-align_center">
+                                    @ Copyright <a href="https://www.ajskilldevelopment.com" target="_blank">
+                                        https://www.ajskilldevelopment.com
+                                    </a>
+                                </div>
+                            </div>
+                        </template>
+
+
+                    </div>
+
+                </template>
+            
+            <!-- </div> -->
+        </div>
+    </lightning-card>
+    </div>
+</template>

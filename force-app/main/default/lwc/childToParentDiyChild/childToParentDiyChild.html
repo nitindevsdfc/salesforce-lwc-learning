@@ -1,0 +1,55 @@
+
+<template>
+    <section role="dialog"
+             tabindex="-1"
+             aria-modal="true"
+             class="slds-modal slds-fade-in-open">
+
+        <div class="slds-modal__container">
+
+            <!-- HEADER -->
+            <div class="slds-modal__header">
+                <h1 class="slds-modal__title slds-hyphenate">
+                    Indian Tourism
+                </h1>
+            </div>
+
+            <!-- BODY -->
+            <div class="slds-modal__content slds-p-around_medium">
+                <div class="slds-grid slds-gutters slds-align_absolute-center">
+
+                    <div class="slds-col">
+                        <img src={meenakshi} width="200"/>
+                        <p class="slds-text-align_center">Meenakshi Temple</p>
+                        <lightning-input type="checkbox" label="Subscribe" value="Meenakshi Temple" checked={isMeenakshiChecked} onchange={handleChange}></lightning-input>
+                    </div>
+
+                    <div class="slds-col">
+                        <img src={tajmahal} width="200"/>
+                        <p class="slds-text-align_center">Taj Mahal</p>
+                        <lightning-input type="checkbox" label="Subscribe" value="Taj Mahal" checked={isTajmahalChecked} onchange={handleChange}></lightning-input>
+
+                    </div>
+
+                    <div class="slds-col">
+                        <img src={qutub} width="200"/>
+                        <p class="slds-text-align_center">Qutub Minar</p>
+                        <lightning-input type="checkbox" label="Subscribe" value="Qutub Minar" checked={isQutubChecked} onchange={handleChange}></lightning-input>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <div class="slds-modal__footer">
+                <button class="slds-button slds-button_brand"
+                        onclick={handleCancel}>
+                    Cancel
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

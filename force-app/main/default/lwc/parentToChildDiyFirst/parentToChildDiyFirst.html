@@ -1,0 +1,40 @@
+<template>
+
+    <lightning-card title="Parent Component">
+
+        <div class="slds-p-around_medium container">
+
+            <div class="slds-grid slds-gutters slds-align_absolute-center button-row">
+                <lightning-button
+                    label="Start"
+                    variant="success"
+                    class="slds-col"
+                    onclick={handleStartClick}>
+                </lightning-button>
+
+                <lightning-button
+                    label="Stop"
+                    variant="destructive"
+                    class="slds-col"
+                    lwc:ref="refStopButton"
+                    disabled="true"
+                    onclick={handleStopClick}>
+                </lightning-button>
+
+                <lightning-button
+                    label="Reset"
+                    variant="brand"
+                    class="slds-col"
+                    lwc:ref="refResetButton"
+                    disabled="true"
+                    onclick={handleResetClick}>
+                </lightning-button>
+            </div>
+
+            <c-parent-to-child-diy-first-child-component lwc:ref="childcomponent"></c-parent-to-child-diy-first-child-component>
+
+        </div>
+
+    </lightning-card>
+
+</template>

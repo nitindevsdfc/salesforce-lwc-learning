@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="My Course Details">
+        <div class="slds-p-around-medium">
+            FirstName : {firstName}
+            <br/>
+            lastName : {lastName}
+            <br/>
+            FullName : {fullName}
+            <br/>
+            email : {email}
+            <br/>
+            course : {course}
+            <br/>
+            Total  Courses : {totalCourses}
+            <br/>
+            isPresent : {isPresent}
+            <br/>
+            noOfWeeks : {noOfWeeks}
+            <br/>
+            QAAlot Session : {QAAlot.Session}
+            <br/>
+            QAAlot Date : {QAAlot.Date}
+            <br/>
+            QAAlot Duration : {QAAlot.Duration}
+            <br/>
+            isSlotAvailable : {isSlotAvailable}
+        </div>
+        <div class="slds-p-around-medium">
+        <lightning-input type="text" label="Enter First Name"  value= {firstName} onchange={handleChange}></lightning-input>
+        </div>
+
+        <div class="slds-p-around-medium">
+        <lightning-input type="text" label="Enter Last Name"  value= {lastName} onchange={handleLastNameChange}></lightning-input>
+        </div>
+
+        <div class="slds-p-around-medium">
+        <lightning-input type="text" label="Enter your course Name"  onchange={checkcourse}></lightning-input>
+        </div>
+
+    </lightning-card>
+</template>

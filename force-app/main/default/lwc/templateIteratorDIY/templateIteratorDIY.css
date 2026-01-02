@@ -1,0 +1,12 @@
+.left_Red{
+    color: red;
+}
+
+.right_Blue{
+    color: blue;
+}
+
+.green_card {
+    border: 10px solid #1f8b43;   
+    border-radius: 2.25rem;
+}

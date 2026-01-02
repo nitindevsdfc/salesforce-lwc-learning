@@ -1,0 +1,60 @@
+<template>
+    <lightning-card title="This is Child Component">
+        <div class="slds-p-around_medium slds-box">
+            <div>
+
+            <!-- This is for Simple String data type value  -->
+
+                 <!-- <p>Message Form Parent : <strong>{messageDetails}</strong></p> -->
+
+            <!-- This is for array data type -->
+
+                <!-- <template for:each={messageDetails} for:item="eachcourse">
+                    <div key={eachcourse} class="slds-grid slds-grid_vertical slds-p-around_small slds-border_bottom">
+                        
+                        <p>{eachcourse}</p>
+
+                    </div>
+                </template> -->
+
+            <!-- This is for simlple single objects -->
+
+                    <!-- <p>{messageDetails.courseId}</p>
+                    <p>{messageDetails.courseName}</p>
+                    <p>{messageDetails.duration}</p>
+                    <p>{messageDetails.level}</p>
+                    <p>{messageDetails.mode}</p> -->
+
+                
+
+            <!-- This is for array of objects  -->
+
+                <template for:each={messageDetails} for:item="eachcourse">
+                    <div key={eachcourse.courseId} class="slds-grid slds-grid_vertical slds-p-around_small slds-border_bottom">
+                        
+
+                        <p>Course Id : {eachcourse.courseId}</p>
+                        <p>Course Name : {eachcourse.courseName}</p>
+                        <p>Duration : {eachcourse.duration}</p>
+                        <p>Level : {eachcourse.level}</p>
+                        <p>Mode : {eachcourse.mode}</p>
+
+                    </div>
+                </template>
+
+
+                <!-- I am checking is data coming from Lead Parent component  -->
+
+                <!-- <template for:each={leadDetails} for:item="eachLead">
+                        <div key={eachLead.email} class="slds-grid slds-grid_vertical slds-p-around_small slds-border_bottom">
+                            <p><b>Name:</b> {eachLead.leadName}</p>
+                            <p><b>Source:</b> {eachLead.leadSource}</p>
+                            <p><b>Revenue:</b> {eachLead.annualRevenue}</p>
+                            <p><b>Email:</b> {eachLead.email}</p>
+                        </div>
+                </template> -->
+
+            </div>
+        </div>
+    </lightning-card>    
+</template>

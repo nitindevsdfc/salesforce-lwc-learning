@@ -1,0 +1,9 @@
+lightning-carousel {
+    max-width: 400px;   /* control width */
+    margin: auto;
+}
+
+lightning-carousel-image img {
+    height: 200px;      /* control height */
+    object-fit: contain; /* or cover */
+}

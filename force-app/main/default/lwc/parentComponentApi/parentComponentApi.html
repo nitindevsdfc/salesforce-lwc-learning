@@ -1,0 +1,17 @@
+<template>
+    
+    <lightning-card title="Learning Parent Component @api Concept">
+        <div class="slds-p-around_medium">
+            <lightning-tabset variant="scoped">
+
+                <lightning-tab label="My Child Component">
+                    <!-- <p><b>This is Parent Component.</b></p> -->
+                     <!-- kebab case naming of messageDetails -->
+                    <c-child-component-api message-details ={courses}></c-child-component-api>
+                </lightning-tab>
+
+            </lightning-tabset>
+
+        </div>
+    </lightning-card>
+</template>

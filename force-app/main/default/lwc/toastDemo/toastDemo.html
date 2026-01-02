@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Toast Demo">
+        <div class="slds-m-around_medium">
+            <div class="slds-box slds-grid">
+
+                    <lightning-button
+                        label="Success"
+                        variant="success"
+                        onclick={handleClick}>
+                    </lightning-button>
+
+                    <lightning-button
+                        label="Warning"
+                        variant="destructive-text"
+                        onclick={handleClick}>
+                    </lightning-button>
+
+                    <lightning-button
+                        label="Info"
+                        variant="brand"
+                        onclick={handleClick}>
+                    </lightning-button>
+
+                    <lightning-button
+                        label="Error"
+                        variant="destructive"
+                        onclick={handleClick}>
+                    </lightning-button>
+
+            </div>
+        </div>
+    </lightning-card>    
+</template>

@@ -1,0 +1,51 @@
+<template>
+
+    <div class="slds-grid slds-gutters">
+
+        <!-- RCB Carousel -->
+        <div class="slds-col slds-size_1-of-2">
+            <div class="slds-box">
+                <h3 class="slds-text-heading_small slds-m-bottom_small">
+                    RCB Players
+                </h3>
+
+                <lightning-carousel>
+                    <template for:each={rcbPlayers} for:item="player">
+                        <lightning-carousel-image
+                            key={player.name}
+                            src={player.image}
+                            header={player.name}
+                            description={player.description}
+                            alternative-text={player.name}
+                            href="javascript:void(0);">
+                        </lightning-carousel-image>
+                    </template>
+                </lightning-carousel>
+            </div>
+        </div>
+
+        <!-- CSK Carousel -->
+        <div class="slds-col slds-size_1-of-2">
+            <div class="slds-box">
+                <h3 class="slds-text-heading_small slds-m-bottom_small">
+                    CSK Players
+                </h3>
+
+                <lightning-carousel>
+                    <template for:each={cskPlayers} for:item="player">
+                        <lightning-carousel-image
+                            key={player.name}
+                            src={player.image}
+                            header={player.name}
+                            description={player.description}
+                            alternative-text={player.name}
+                            href="javascript:void(0);">
+                        </lightning-carousel-image>
+                    </template>
+                </lightning-carousel>
+            </div>
+        </div>
+
+    </div>
+
+</template>

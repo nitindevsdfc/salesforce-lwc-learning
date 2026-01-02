@@ -1,0 +1,139 @@
+<!-- ===============================================================================
+REVISION NOTES – recordEditFormDemo.html
+
+PURPOSE:
+• Create/Edit a Salesforce record using lightning-record-edit-form
+• Perform validation before save
+• Control Description field value based on Title
+• Provide Save, Reset, and Cancel functionality
+
+KEY CONCEPTS USED:
+• lightning-record-edit-form → handles CRUD without Apex
+• lightning-input-field      → auto binds Salesforce metadata
+• lightning-output-field     → read-only display, still savable via JS
+• lwc:ref                   → direct JS access to fields/form
+• SLDS grid                  → two-column layout
+
+BUTTON BEHAVIOR:
+• Save   → triggers onsubmit → validation + data manipulation
+• Reset  → restores last loaded values (native behavior)
+• Cancel → manually resets all input fields via JS
+
+IMPORTANT RULE:
+• DO NOT expect Record Id in onsubmit
+• Record Id is available ONLY in onsuccess
+=============================================================================== -->
+
+<template>
+    <!-- Lightning Card wrapper -->
+    <lightning-card title="Light Record Edit Form Demo">
+
+        <!-- Adds standard Salesforce margin -->
+        <div class="slds-var-m-around_medium">
+
+            <!--
+                lightning-record-edit-form
+                - object-api-name : API name of object (Contact, Lead, etc.)
+                - record-id       : If present → edit record, else → create record
+                - onsubmit        : Fired BEFORE record is saved (used for validation)
+                - onsuccess       : Fired AFTER successful save (Id available here)
+                - onerror         : Fired if save fails
+                - lwc:ref="myForm": Used to submit form programmatically from JS
+            -->
+            <lightning-record-edit-form
+                object-api-name={objectApiName}
+                record-id={recordId}
+                onsubmit={handleSubmit}
+                onsuccess={handleSuccess}
+                onerror={handleError}
+                lwc:ref="myForm"
+            >
+
+                <!-- Grid layout with two columns -->
+                <div class="slds-grid slds-gutters">
+
+                    <!-- Left column -->
+                    <div class="slds-col">
+
+                        <!-- First Name input field -->
+                        <lightning-input-field field-name="FirstName"></lightning-input-field>
+
+                        <!--
+                            Last Name field
+                            - class used to access value via querySelector in JS
+                        -->
+                        <lightning-input-field field-name="LastName" class="LastName"></lightning-input-field>
+
+                        <!-- Lead Source picklist -->
+                        <lightning-input-field field-name="LeadSource"></lightning-input-field>
+
+                        <!--
+                            Title field
+                            - lwc:ref used to read value directly in JS
+                        -->
+                        <lightning-input-field field-name="Title" lwc:ref="MyTitle"></lightning-input-field>
+
+                    </div>
+
+                    <!-- Right column -->
+                    <div class="slds-col">
+
+                        <!--
+                            Account lookup field
+                            - Mandatory only when Title = Vice President
+                        -->
+                        <lightning-input-field field-name="AccountId" lwc:ref="AccountName"></lightning-input-field>
+
+                        <!-- Email field -->
+                        <lightning-input-field field-name="Email"></lightning-input-field>
+
+                        <!-- Birthdate field -->
+                        <lightning-input-field field-name="Birthdate"></lightning-input-field>
+
+                        <!--
+                            Description field (read-only)
+                            - Value is set programmatically in JS before submit
+                        -->
+                        <lightning-output-field field-name="Description" lwc:ref="Description"></lightning-output-field>
+
+                    </div>
+                </div>
+
+                <!-- Button section -->
+                <div class="slds-align_absolute-center">
+
+                    <!-- Save button → triggers onsubmit -->
+                    <lightning-button
+                        label="Save"
+                        variant="brand"
+                        type="submit">
+                    </lightning-button>
+
+                    <!--
+                        Reset button
+                        - Reverts all fields to last loaded values
+                    -->
+                    <lightning-button
+                        label="Reset"
+                        variant="neutral"
+                        class="slds-var-p-around_medium"
+                        type="reset">
+                    </lightning-button>
+
+                    <!--
+                        Cancel button
+                        - Custom reset logic handled in JS
+                    -->
+                    <lightning-button
+                        label="Cancel"
+                        variant="brand"
+                        class="slds-var-p-around_medium"
+                        onclick={handleCancel}>
+                    </lightning-button>
+
+                </div>
+
+            </lightning-record-edit-form>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,28 @@
+<template>
+    <lightning-card>
+        <div slot="title" class="slds-text-align_center slds-text-heading_medium slds-text-title_bold">Indian Monuments</div>
+        <div class="slds-align_absolute-center slds-p-around_medium">
+            <lightning-button label="Click to See" variant="brand" onclick={handleClick}></lightning-button>
+        </div>
+        <template lwc:if={showChild}>
+            <c-child-to-parent-diy-child monuments-array={childMonumentArray} onclose={handleChildClose}></c-child-to-parent-diy-child>
+        </template>
+
+        <div class="slds-m-around_medium slds-box">
+            <strong>My Favourite Spots</strong>
+        </div>
+        
+        <div class="slds-m-around_medium slds-box">
+        <template if:true={arrayCheck}>
+            <template for:each={childMonumentArray} for:item="monument">
+                <p key={monument} class="monument-text">{monument}</p>
+            </template>
+        </template>
+
+        <template if:false={arrayCheck}>
+                <p>No monuments selected</p>
+        </template>
+        </div>
+
+    </lightning-card>
+</template>

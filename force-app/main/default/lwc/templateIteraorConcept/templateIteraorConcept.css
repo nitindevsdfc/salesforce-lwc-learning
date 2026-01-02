@@ -1,0 +1,10 @@
+.emp_first{
+    color: red;
+    border: 2px;
+}
+
+.emp_last{
+    color: green;
+    border: 2px;
+    background-color: rgb(218, 218, 16);
+}

@@ -1,0 +1,41 @@
+<template>
+    
+    <lightning-card title="Reactivity Demo">
+        <div class="slds-p-around_medium">
+            QA Session : {QASlot.Session}
+        </div>
+
+        <div class="slds-p-around_medium">
+            Courses : {course}
+        </div>
+
+        <div class="slds-p-around_medium">
+            <lightning-input type="text" label="Enter Session Number"  onchange={handleSessionChange}></lightning-input>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <lightning-input type="text" label="Add a course" value = {newCourse} onchange={handleCourseChange}></lightning-input>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <lightning-button 
+              variant="brand"
+              label="Add a Course" 
+              onclick={handleAddCourse} 
+            ></lightning-button>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <lightning-input type="text" label="Remove a course" value = {removeCourse} onchange={removeCourseChange}></lightning-input>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <lightning-button 
+              variant="destructive"
+              label="Remove a Course" 
+              onclick={handleRemoveCourse} 
+            ></lightning-button>
+        </div>
+
+    </lightning-card>
+</template>

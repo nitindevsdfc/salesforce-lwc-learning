@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Template Looping With Object Array">
+        <div class="slds-p-around_medium">
+
+            <template for:each={items} for:item="itemObject">
+                <div key={itemObject.id} class="slds-box slds-m-bottom_small">
+                    <b>{itemObject.id}</b> =&gt; {itemObject.name}, {itemObject.price}
+                </div>
+            </template>
+
+
+            <template for:each={cousre} for:item="eachCourse" for:index="index">
+                <div key={eachCourse.index} class="slds-box slds-m-bottom_small">
+                    <b>Index : {index}</b> =&gt; 
+                    Name : {eachCourse.Name}, 
+                    Duration : {eachCourse.Duration}, 
+                    Fees : {eachCourse.Fees}, 
+                    Batch Size : {eachCourse.Batch}
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

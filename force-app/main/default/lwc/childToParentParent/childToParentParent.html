@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Child to Parent Demo">
+        <div class="slds-p-around_medium">
+            <lightning-button label="Show Child" variant="brand" onclick={handleClick}></lightning-button>
+            <template lwc:if={showChild}>
+                 <c-child-to-parent-child onclose={handleChildClose}></c-child-to-parent-child>
+            </template>
+             
+        </div>
+    </lightning-card>    
+</template>

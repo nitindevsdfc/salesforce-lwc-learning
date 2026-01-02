@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="To-Do-List" icon-name="custom:custom14">
+        <div class="slds-p-around_medium">
+
+            <template lwc:if={sizeOfTodoList}>
+                <template for:each={todoList} for:item="eachTask">
+                    <div key={eachTask.id} class="slds-box slds-grid slds-align_absolute-center">
+                        <div class="slds-p-around_medium slds-col whenTask">
+                            <b>Task:</b> {eachTask.task}
+                        </div>
+                        <div class="slds-p-around_medium slds-col whenTask">
+                            <lightning-button-icon icon-name="utility:delete" variant="bare" alternative-text="Delete" name={eachTask.id} onclick={deleteTask}></lightning-button-icon>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+            <template lwc:else>
+                <div class="noTask">
+                    <p>No To-Do-List to display</p>
+                </div>
+            </template>
+
+
+            <div class="slds-m-top_medium slds-border_top">
+                <lightning-input label="Enter New Task" type="text" value={newTask} onchange={handleTodoListChange}></lightning-input>
+            </div>
+            <div class="slds-m-top_medium">
+                <lightning-button label="Add To-Do-List" variant="brand" onclick={addTodoList}></lightning-button>
+            </div>
+
+
+        </div>
+    </lightning-card>
+</template>

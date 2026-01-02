@@ -1,0 +1,82 @@
+<template>
+    <lightning-card title="Conditional Rendering">
+        <div class="slds-p-around_medium">
+            <b>Choose your Interest</b>
+            <br>
+            <div>
+                <lightning-input type="checkbox" label="Shopping"  lwc:ref  = "shopCheck" onchange={handleShoppingChange}></lightning-input>
+            </div>
+            <br>
+            <div>
+                <lightning-input type="checkbox" label="Reading"  lwc:ref = "readCheck" onchange={handleReadingChange}></lightning-input>
+            </div>
+
+
+
+            <template lwc:if ={isShoppingChosen}>
+
+                
+                <lightning-card title="Shopping Sites">
+                    <div class="slds-p-around_medium slds-box">
+                        <ul>
+                            <li>
+                                <a href="https://www.amazon.in/" >🛍️Amazon</a>
+                            </li>
+                            <li>
+                                <a href="https://www.flipkart.com/" >🛍️Flipkart</a>
+                            </li>
+                            <li>
+                                <a href="https://www.myntra.com/" >🛍️Myntra</a>
+                            </li>
+                            <li>
+                                <a href="https://www.snapdeal.com/" >🛍️Snapdeal</a>
+                            </li>
+                            <li>
+                                <a href="https://www.jabong.com/" >🛍️Jabong</a>
+                            </li>
+                        </ul>
+                    </div>    
+                </lightning-card>
+
+            </template>
+
+
+            <template lwc:elseif ={isReadingChosen}>
+
+                
+                    <lightning-card title="Books to Read">
+                        <div class="slds-p-around_medium slds-box">
+                            <ul>
+                                <li>
+                                    <a href="https://books.google.com/books?id=kfMXAQAAIAAJ" >📘 The Alchemist</a>
+                                </li>
+                                <li>
+                                    <a href="https://books.google.com/books?id=P3K-DwAAQBAJ" >📗 Atomic Habits</a>
+                                </li>
+                                <li>
+                                    <a href="https://books.google.com/books?id=8O5SDwAAQBAJ" >📙 Rich Dad Poor Dad</a>
+                                </li>
+                                <li>
+                                    <a href="https://books.google.com/books?id=xw1dDwAAQBAJ" >📕 The Power of Your Subconscious Mind</a>
+                                </li>
+                                <li>
+                                    <a href="https://books.google.com/books?id=Z8ZNDwAAQBAJ" >📔 Think and Grow Rich</a>
+                                </li>
+                            </ul>
+                        </div>    
+                    </lightning-card>
+
+            </template>
+
+            <template lwc:else>
+
+                <lightning-card title="No Interest Selected">
+                    <div class = {ischosen}>
+                        <p>Please select your interest</p>
+                    </div>    
+                </lightning-card>
+            </template>
+
+        </div>
+    </lightning-card>    
+</template>

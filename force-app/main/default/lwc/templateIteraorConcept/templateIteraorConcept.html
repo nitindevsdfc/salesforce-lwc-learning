@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Template Iterator in LWC">
+        <div class="slds-p-around_medium">
+            <template iterator:it={employees}>
+                <div key={it.value.empId} class="slds-box slds-m-bottom_small">
+
+                    <!-- First element -->
+                    <template lwc:if={it.first}>
+                        <div class="slds-box slds-theme_shade slds-theme_alert-texture emp_first">
+                            <strong>Top 5 Employees</strong>
+                        </div>
+                    </template>
+
+                    <p><b>Name:</b> {it.value.name}</p>
+                    <p><b>Role:</b> {it.value.role}</p>
+                    <p><b>Department:</b> {it.value.department}</p>
+                    <p><b>Salary:</b> ₹{it.value.salary}</p>
+
+                    <!-- Last element -->
+                    <template lwc:if={it.last}>
+                        <div class="slds-theme_shade slds-p-around_x-small emp_last">
+                            <a href="https://www.salesforce.com/in/" target="_blank">
+                                Learn More
+                            </a>
+                        </div>
+                    </template>
+
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

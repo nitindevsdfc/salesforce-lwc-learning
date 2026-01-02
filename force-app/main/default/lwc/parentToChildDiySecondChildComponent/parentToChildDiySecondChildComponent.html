@@ -1,0 +1,25 @@
+<template>
+    
+    <lightning-card title="Top Scorer of the Squad">
+        <div class="slds-p-around_medium">
+
+            <div>
+                
+                    <template if:true={topPlayer}>
+                        <template for:each={topPlayer} for:item="eachPlayer">
+                            <div key={eachPlayer} class="slds-m-bottom_x-small">
+                                 <p>Top Scorer: {eachPlayer.Name} - {eachPlayer.Score}</p> 
+                            </div>
+                        </template>
+                    </template>
+
+                    <template if:false={topPlayer}>
+                        <p>No players available</p>
+                    </template>
+                
+
+            </div>
+
+        </div>
+    </lightning-card>
+</template>

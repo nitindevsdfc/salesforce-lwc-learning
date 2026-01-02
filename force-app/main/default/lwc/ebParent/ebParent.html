@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="👨 Parent">
+        <div onclick={handleDivClose} class="slds-p-around_medium">
+
+            <strong><p class="slds-m-top_small">{message}</p></strong>
+            <c-eb-child onclose={handleClose}></c-eb-child>
+
+        </div>
+    </lightning-card>
+</template>

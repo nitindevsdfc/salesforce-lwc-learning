@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Progress Bar Slider" icon-name="utility:chart">
+
+        <div class="container">
+
+            <!-- ACTION BUTTONS -->
+            <div class="slds-grid slds-gutters slds-align_absolute-center button-row">
+                <lightning-button
+                    label="Start"
+                    variant="success"
+                    class="slds-col"
+                    onclick={handleStartClick}>
+                </lightning-button>
+
+                <lightning-button
+                    label="Stop"
+                    variant="destructive"
+                    class="slds-col"
+                    lwc:ref="refStopButton"
+                    disabled="true"
+                    onclick={handleStopClick}>
+                </lightning-button>
+
+                <lightning-button
+                    label="Reset"
+                    variant="brand"
+                    class="slds-col"
+                    lwc:ref="refResetButton"
+                    disabled="true"
+                    onclick={handleResetClick}>
+                </lightning-button>
+            </div>
+
+            <!-- PROGRESS AREA -->
+            <div class="progress-card">
+                <c-child-progress-demo lwc:ref="childcomponent"></c-child-progress-demo>
+            </div>
+
+        </div>
+
+    </lightning-card>
+</template>

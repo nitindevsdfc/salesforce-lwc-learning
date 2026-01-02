@@ -1,0 +1,65 @@
+<template>
+    <lightning-card title="Lead Details">
+        <div class="slds-p-around_medium">
+
+            <lightning-input label="Enter Lead Name" type="text"
+                value={leadName} onchange={handleLeadNameChange}>
+            </lightning-input>
+
+            <lightning-input label="Enter Lead Source" type="text"
+                value={leadSource} onchange={handleLeadSourceChange}>
+            </lightning-input>
+
+            <lightning-input label="Enter Annual Revenue" type="number"
+                value={annualRevenue} onchange={handleAnnualRevenueChange}>
+            </lightning-input>
+
+            <lightning-input label="Enter Email" type="email"
+                value={email} onchange={handleEmailChange}>
+            </lightning-input>
+
+            <lightning-button label="Add Lead" variant="brand" onclick={addLead}></lightning-button>
+            <lightning-button label="Clear" variant="neutral" onclick={clearLead}></lightning-button>
+            <lightning-button label="Display Leads" variant="brand" onclick={displayLead}></lightning-button>
+            
+            <!-- Template Looping -->
+            <!-- <template lwc:if={showLeads}> -->
+                
+                <template lwc:if={showLeads}>
+                    <template for:each={leadDetails} for:item="eachLead">
+                        <div key={eachLead.email} class="slds-box slds-m-bottom_small">
+                            <p><b>Name:</b> {eachLead.leadName}</p>
+                            <p><b>Source:</b> {eachLead.leadSource}</p>
+                            <p><b>Revenue:</b> {eachLead.annualRevenue}</p>
+                            <p><b>Email:</b> {eachLead.email}</p>
+                        </div>
+                    </template>
+                </template>
+
+                <template lwc:else>
+                    <p>No Leads to display</p>
+                </template>
+
+            <!-- </template> -->
+
+            <div>
+                <lightning-input
+                    type="checkbox"
+                    label="Want to Delete Leads"
+                    checked={wantToDeleteLeads}
+                    onchange={handleCheckboxChange}>
+                </lightning-input>
+            </div>
+
+            <template lwc:if={wantToDeleteLeads}>
+                <div>
+                <lightning-input label="Enter Lead Email"  value={leadEmail} onchange={handleLeadEmailChange}></lightning-input>
+                </div>
+                <div>
+                    <lightning-button label="Delete Lead" variant="brand" onclick={deleteLead}></lightning-button>
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

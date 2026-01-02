@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Lifecycle Hooks parent component">
+        <div class="slds-p-around_medium">
+            <p lwc:ref="pTag">
+                Hello
+            </p>
+            {value}
+            <lightning-input type="text" label="Enter value" onchange={handleChange}>
+            </lightning-input>
+            <c-life-cycle-hooks-child></c-life-cycle-hooks-child>
+        </div>
+    </lightning-card>    
+</template>
