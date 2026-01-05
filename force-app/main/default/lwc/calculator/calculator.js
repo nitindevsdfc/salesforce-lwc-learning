@@ -6,10 +6,10 @@ import calculator from './calculator.html'
 export default class Calculator extends LightningElement {
 
     chosenCalculatorType;
-    @track currentValue = '';
+    currentValue = '';
 
     render(){
-        return this.chosenCalculatorType === 'CALCULATOR' ? normalCalculator 
+        return this.chosenCalculatorType === 'NORMAL CALCULATOR' ? normalCalculator 
         : this.chosenCalculatorType === 'SCIENTIFIC CALCULATOR' ? scientificCalculator : calculator;
     }
 
@@ -39,7 +39,7 @@ export default class Calculator extends LightningElement {
 
             switch (func) {
                 case 'sin':
-                    result = Math.sin(value * Math.PI / 180); // degree → radian
+                    result = Math.sin(value * Math.PI / 180); 
                     break;
 
                 case 'cos':
@@ -65,6 +65,8 @@ export default class Calculator extends LightningElement {
                 default:
                     return;
             }
+            
+            result = Math.abs(result) < 1e-10 ? 0 : result;
 
             this.currentValue = result.toString();
         } catch {

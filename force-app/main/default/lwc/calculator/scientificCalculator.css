@@ -8,10 +8,10 @@
     text-align: right;
 }
 
-/* 🔥 MAIN FIX → 5 COLUMN GRID */
+/* MAIN FIX → 5 COLUMN GRID */
 .button-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* ⬅️ CHANGE HERE */
+    grid-template-columns: repeat(5, 1fr); /*  CHANGE HERE */
     gap: 10px;
     margin-top: 12px;
 }
