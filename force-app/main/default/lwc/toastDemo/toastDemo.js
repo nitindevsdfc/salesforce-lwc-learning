@@ -7,11 +7,13 @@ export default class DemoToast extends LightningElement {
         const label = event.target.label;
 
         switch (label) {
+
             case 'Success':
                 this.showToast(
                     'Success',
                     '{0} Account created successfully {1}',
                     'success',
+                    'pester',
                     [
                         'Salesforce',
                         {
@@ -26,7 +28,9 @@ export default class DemoToast extends LightningElement {
                 this.showToast(
                     'Warning',
                     'You do not have sufficient permissions to perform this action',
-                    'warning'
+                    'warning',
+                    'dismissable',
+                    null
                 );
                 break;
 
@@ -34,7 +38,9 @@ export default class DemoToast extends LightningElement {
                 this.showToast(
                     'Info',
                     'System maintenance on 15/01/2025',
-                    'info'
+                    'info',
+                    'dismissable',
+                    null
                 );
                 break;
 
@@ -43,15 +49,14 @@ export default class DemoToast extends LightningElement {
                     'Error',
                     'Error while creating Account record',
                     'error',
-                    null,
-                    'sticky'
+                    'sticky',
+                    null
                 );
                 break;
         }
     }
 
-    
-    showToast(title, message, variant, messageData = null, mode = 'dismissable') {
+    showToast(title, message, variant, mode, messageData) {
         this.dispatchEvent(
             new ShowToastEvent({
                 title,
