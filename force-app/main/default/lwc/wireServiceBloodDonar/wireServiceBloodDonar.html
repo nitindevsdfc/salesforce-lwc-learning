@@ -1,0 +1,40 @@
+<template>
+    
+    <lightning-card title="Blood Donar Records using @wire with functions...">
+
+        <div>
+            Donar Id : {_donarId}
+        </div>
+        <div>
+            Donar Name : {_donarName}
+        </div>
+        <div>
+            Donar Blood Group : {_donarBloodGroup}
+        </div>
+
+        <div class="slds-grid slds-align_absolute-center" style="height:100%;">
+                 <lightning-button label="Eligibility" variant="brand" onclick={checkEligibility}></lightning-button>
+        </div>
+
+
+    </lightning-card>
+
+    <!-- <lightning-card title="Blood Donar Records using @wire Property....">
+
+        <template if:true={BloodDonarDetailsProperty.data}>
+
+            <div>
+                Donar Id : {BloodDonarDetailsProperty.data.fields.Name.value} 
+                Donar Name : {BloodDonarDetailsProperty.data.fields.Name__c.value}                
+                Donar Blood Group : {BloodDonarDetailsProperty.data.fields.Blood_Donar__c.value}                
+
+            </div>
+        </template>
+
+        <template if:false={BloodDonarDetailsProperty.data}>
+            <div>
+                No Data Available So So Sorry .....  
+            </div>
+        </template>
+    </lightning-card> -->
+</template>

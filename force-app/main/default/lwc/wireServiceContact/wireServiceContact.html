@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Contact Information using @wire Service (Function)">
+
+        <div>
+            Email = {_email}
+        </div>
+
+        <div>
+            LastName = {_lastName}
+        </div>
+
+    </lightning-card>    
+
+        <lightning-card title="Contact Information using @wire Service (Property)">
+        
+        <template if:true={contactDetailsProperty.data}>
+            <div>
+                Email = {contactDetailsProperty.data.fields.Email.value}
+            </div>
+
+            <div>
+                LastName = {contactDetailsProperty.data.fields.LastName.value}
+
+            </div>
+        </template>
+
+        <template if:false={contactDetailsProperty.data}>
+            No Data Available !!
+        </template>
+
+    </lightning-card> 
+</template>
