@@ -1,4 +1,4 @@
-import { LightningElement, wire } from 'lwc';
+import { LightningElement, wire, api } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
 
 import DONAR_ID_FIELD from '@salesforce/schema/Blood_Donar__c.Name';
@@ -14,9 +14,10 @@ export default class WireServiceBloodDonar extends LightningElement {
     _donarName;
     _donarBloodGroup;
     _donarAge;
+    @api recordId;
 
     @wire(getRecord, {
-        recordId : 'a03dM00001Rz97yQAB',
+        recordId : '$recordId',
         fields : [
             DONAR_ID_FIELD,
             DONAR_NAME_FIELD,
@@ -25,6 +26,7 @@ export default class WireServiceBloodDonar extends LightningElement {
         ]
     })
     BLoodDonarDetailsFunciton({ data, error }) {
+        console.log(data);
         if (data) {
             this._donarId = data.fields.Name.value;
             this._donarName = data.fields.Name__c.value;
