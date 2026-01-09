@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Account Object MetadataInfo With Wire Decorator">
+
+        <template for:each={accountChildRelationship} for:item="child">
+            <div key={child.childObjectApiName}>
+                {child.fieldName}
+                {child.relationshipName}
+            </div>
+
+        </template>
+    </lightning-card>    
+</template>

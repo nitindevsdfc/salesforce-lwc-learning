@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title={cardTitle}>
+        <div>
+            <div>
+            Total Custom Fields : {customFields}
+            </div>
+            <div>
+            Total Standard Fields : {standardFields}
+            </div>
+            <div>
+                Total Record Type : {totalRecordTypes}
+            </div>
+            <div>
+                Record Type : {recordTypeNames}
+            </div>
+            <div>
+                <template for:each={objectFields} for:item="objectName">
+                    <div key={apiName}>
+                        {objectName.apiName}
+                    </div>
+                </template>
+            </div>
+        </div>
+    </lightning-card>    
+</template>

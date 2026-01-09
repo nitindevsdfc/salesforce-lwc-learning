@@ -1,5 +1,5 @@
 import { LightningElement, wire, api } from 'lwc';
-import { getRecord } from 'lightning/uiRecordApi';
+import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
 import LAST_NAME_FIELD from '@salesforce/schema/Contact.LastName'
 import EMAIL_FIELD from '@salesforce/schema/Contact.Email'
 
