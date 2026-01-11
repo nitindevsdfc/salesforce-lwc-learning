@@ -1,24 +1,32 @@
 <template>
     <lightning-card title="Wire Service Picklist Demo">
-        <div>
+         <div>
             
                 <lightning-combobox
                     name="progress"
                     label="RecordType"
                     value={value}
                     placeholder="Choose RecordType"
-                    options={options}
-                    onchange={handleChange} ></lightning-combobox>
+                    options={recordTypeArray}
+                    onchange={handleRecordTypeChange} ></lightning-combobox>
 
 
                 <lightning-combobox
                     name="progress"
-                    label="Industry"
+                    label="Picklist"
                     value={value}
-                    placeholder="Choose RecordType"
-                    options={options}
-                    onchange={handleChange} ></lightning-combobox>
+                    placeholder="Choose Picklist"
+                    options={picklistArray}
+                    onchange={handlePicklistChange} ></lightning-combobox>
 
-        </div>
+                <lightning-combobox
+                    name="progress"
+                    label="Values"
+                    value={value}
+                    placeholder="Picklist Values"
+                    options={picklistValues}
+                     ></lightning-combobox>
+
+        </div> 
     </lightning-card>
 </template>

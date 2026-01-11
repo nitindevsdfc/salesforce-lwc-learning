@@ -19,17 +19,17 @@ export default class WireGetObjectMetadataInfo extends LightningElement {
     objectDetails({data, error}){
         if(data){
             
-           console.log(data); // object
+        //    console.log(data); // object
            this.objectData = data;
 
-           console.log(typeof(data.fields)); // object
+        //    console.log(typeof(data.fields)); // object
            this.objectFields = Object.values(this.objectData.fields); // convert to array
 
-           console.log(JSON.stringify(this.objectFields,null,2)); // array presentation
-           console.log(typeof(data.recordTypeInfos));
+        //    console.log(JSON.stringify(this.objectFields,null,2)); // array presentation
+        //    console.log(typeof(data.recordTypeInfos));
 
            this.objectRecordTypeInfo = Object.values(this.objectData.recordTypeInfos); // convert to array
-           console.log(JSON.stringify(this.objectRecordTypeInfo,null,2)); // array presentation
+        //    console.log(JSON.stringify(this.objectRecordTypeInfo,null,2)); // array presentation
 
         }else if(error){
             console.error(error);
