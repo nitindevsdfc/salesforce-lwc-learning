@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="LWC APEX DEMO">
+        
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+                label="Select Rating"
+                value={selectedRating}
+                placeholder="All Ratings"
+                options={ratingOptions}
+                onchange={handleRatingChange}>
+            </lightning-combobox>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <template if:true={accountData}>
+                <template for:each={accountData} for:item="record">
+                    <div key={record.Id} class="slds-box slds-var-m-around_medium">
+                        <div>Name : {record.Name}</div>
+                        <div>Industry : {record.Industry}</div>
+                        <div>Rating : {record.Rating}</div>
+                    </div>
+                </template>
+            </template>
+
+            <template if:false={accountData}>
+                <strong>No Data Available!!</strong>
+            </template>
+        </div>
+    </lightning-card>
+</template>
